@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>课程表PLUS</title>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+<style type="text/css">
+body{
+      background-image: url(th.jpg);
+}
+table{
+      width:fit-content;
+      height:fit-content;
+}
+caption{
+      font-size:xx-large;
+      color: brown;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+tbody{
+      background-color:darkviolet;
+      text-align: center;
+}
+.workday{
+      background-color:violet;
+}
+    </style>
+    <script>
+      var str = [
+      {"date":"Monday","subject1":"计算机与程序设计基础  东十二414","subject2":"微积分  东九B203","subject3":"学科（专业）概论  东九C501","subject4":"线性代数  东九C203"},
+      {"date":"Tuseday","subject1":"工程制图  东十二101","subject2":"工程制图  东十二101","subject3":"综合英语  东九A101","subject4":"空"},
+      {"date":"Wednseday","subject1":"空","subject2":"思想道德修养与法律基础  东九C503","subject3":"微积分  东九楼B203","subject4":"计算机与程序设计基础  东十二414"},
+      {"date":"Thursday","subject1":"空","subject2":"中国语文  东十二F202","subject3":"舞龙（一)  中心操场","subject4":"空"},
+      {"date":"Friday","subject1":"微积分  东九B203","subject2":"综合英语  东九A101","subject3":"空","subject4":"空"}]
+
+      $(document).ready(function() {
+                var s = "";
+                for(var i = 0; i < str.length; i++) {
+                    s = "<tr class=workday><td>" + str[i].date + "</td><td>" + str[i].subject1 + "</td><td>" + str[i].subject2 + "</td><td>" + str[i].subject3 + "</td><td>" + str[i].subject4 + "</td></tr><tr><td colspan=5></td></tr>";
+                    $("#tab").append(s);
+                }
+            });
+    </script>
+</head>
+
+<body>
+    <div class="dropdown">
+        <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+            data-toggle="dropdown">
+          周数
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">第十二周</a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">第十三周</a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">第十四周</a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">第十五周</a>
+          </li>
+        </ul>
+    </div>
+  <div class="container">
+    <table id="tab" class="table table-bordered">
+    <caption>课程表</caption>
+      <tbody>
+        <tr>
+          <td colspan="5"></td>
+        </tr>
+      </tbody>     
+    </table>
+  </div>
+</body>
+</html>
